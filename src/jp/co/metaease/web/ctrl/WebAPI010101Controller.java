@@ -35,7 +35,8 @@ public final class WebAPI010101Controller {
     String service = System.getenv("K_SERVICE") == null ? "???" : System.getenv("K_SERVICE");
 
     // API呼び出し
-    URL verisign = new URL("https://my-apigw-001-1upcx6wd.uc.gateway.dev");
+//    URL verisign = new URL("https://my-apigw-001-1upcx6wd.uc.gateway.dev");
+    URL verisign = URI.create("https://my-apigw-001-1upcx6wd.uc.gateway.dev").toURL();
     BufferedReader in = new BufferedReader(new InputStreamReader(verisign.openStream()));
     String inputLine;
     String strRespApi = "";

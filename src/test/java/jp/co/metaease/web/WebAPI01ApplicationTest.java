@@ -1,4 +1,4 @@
-package main.java.jp.co.metaease.web;
+package jp.co.metaease.web;
 
 import java.util.Collections;
 import org.slf4j.Logger;
@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /** This class serves as an entry point for the Spring Boot app. */
 @SpringBootApplication
-public class WebAPI01Application {
+public class WebAPI01ApplicationTest {
 
-  private static final Logger logger = LoggerFactory.getLogger(WebAPI01Application.class);
+  private static final Logger logger = LoggerFactory.getLogger(WebAPI01ApplicationTest.class);
 
   public static void main(final String[] args) throws Exception {
     String port = System.getenv("PORT");
@@ -18,7 +18,7 @@ public class WebAPI01Application {
       port = "8080";
       logger.warn("$PORT environment variable not set, defaulting to 8080");
     }
-    SpringApplication app = new SpringApplication(WebAPI01Application.class);
+    SpringApplication app = new SpringApplication(WebAPI01ApplicationTest.class);
     app.setDefaultProperties(Collections.singletonMap("server.port", port));
 
     // Start the Spring Boot application.

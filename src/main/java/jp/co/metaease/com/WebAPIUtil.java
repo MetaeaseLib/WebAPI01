@@ -17,7 +17,7 @@
  *
  * @author  Y.Takahashi
  *********************************************************************/
- package main.java.jp.co.metaease.com;
+ package jp.co.metaease.com;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;

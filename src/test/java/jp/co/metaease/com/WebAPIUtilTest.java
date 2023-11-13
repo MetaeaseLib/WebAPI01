@@ -2,22 +2,22 @@
  * 文字チェック、プロパティファイルよりの値の取得等の部品を提供します。
  * @funcname Webユーティリティ
  * @@
- * WebAPIUtil.java
+ * WebAPIUtilTest.java
  * WebAPI　共通部品
  *
  * クラス一覧
  *     No  クラス名                概要
- *     01  WebAPIUtil　　　　　    文字チェック、プロパティファイルよりの値の取得等の部品を提供します。
+ *     01  WebAPIUtilTest　　　    文字チェック、プロパティファイルよりの値の取得等の部品を提供します。
  *
  * 履歴
  *     No       日付        Ver             更新者              内容
- *     00001    2023/11/09　V0001L00001     Yuki Takahashi     Initial
+ *     00001    2023/11/13　V0001L00001     Yuki Takahashi     Initial
  *
  * Copyright(C) Metaease 2023
  *
  * @author  Y.Takahashi
  *********************************************************************/
- package main.java.jp.co.metaease.com;
+ package jp.co.metaease.com;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
@@ -31,7 +31,7 @@ import java.util.MissingResourceException;
 //import java.util.Random;
 import java.util.ResourceBundle;
 
-public class WebAPIUtil {
+public class WebAPIUtilTest {
 
 	/**
 	 * 半角英数字の範囲の最初を示します。
@@ -167,11 +167,11 @@ public class WebAPIUtil {
 	/**
 	 * コンストラクターです。
 	 * @@
-	 * WebAPIUtil
+	 * WebAPIUtilTest
 	 * @note
 	 * @@
 	 */
-	public WebAPIUtil() {
+	public WebAPIUtilTest() {
 		super();
 	}
 
@@ -188,7 +188,7 @@ public class WebAPIUtil {
 	public static boolean ascii2Chk(String str) {
 
 		// 引数がnull又は空文字列の場合はfalseを返します。
-		if (StringUtil.isEmpty(str)) {
+		if (StringUtilTest.isEmpty(str)) {
 			return false;
 		}
 
@@ -208,7 +208,7 @@ public class WebAPIUtil {
 	public static boolean asciiChk(String str) {
 
 		// 引数がnull又は空文字列の場合はfalseを返します。
-		if (StringUtil.isEmpty(str)) {
+		if (StringUtilTest.isEmpty(str)) {
 			return false;
 		}
 
@@ -266,7 +266,7 @@ public class WebAPIUtil {
 	private static boolean isNarrowChar(String str, boolean flg) {
 
 		// 引数がnull又は空文字列の場合はfalseを返します。
-		if (StringUtil.isEmpty(str)) {
+		if (StringUtilTest.isEmpty(str)) {
 			return false;
 		}
 
@@ -308,7 +308,7 @@ public class WebAPIUtil {
 	public static Integer calcAge(String byyyymmdd, String yyyymmdd) {
 
 		// 引数がnull又は空文字列の場合はnullを返します。
-		if (StringUtil.isEmpty(byyyymmdd) || StringUtil.isEmpty(yyyymmdd)) {
+		if (StringUtilTest.isEmpty(byyyymmdd) || StringUtilTest.isEmpty(yyyymmdd)) {
 			return null;
 		}
 
@@ -443,7 +443,7 @@ public class WebAPIUtil {
 	public static boolean zenkakuChk(String str) {
 
 		// 引数がnull又は空文字列の場合はfalseを返す
-		if (StringUtil.isEmpty(str)) {
+		if (StringUtilTest.isEmpty(str)) {
 			return false;
 		}
 
@@ -476,7 +476,7 @@ public class WebAPIUtil {
 	 */
 	public static boolean zenkakuKana2Chk(String str) {
 		// 引数がnull又は空文字列の場合はfalseを返す
-		if (StringUtil.isEmpty(str)) {
+		if (StringUtilTest.isEmpty(str)) {
 			return false;
 		}
 
@@ -518,7 +518,7 @@ public class WebAPIUtil {
 	public static HashMap getPropertyValueIchiran(String filePath) {
 
 		// 引数がnull又は空文字列の場合はnullを返す
-		if (StringUtil.isEmpty(filePath)) {
+		if (StringUtilTest.isEmpty(filePath)) {
 			return null;
 		}
 
@@ -559,7 +559,7 @@ public class WebAPIUtil {
 	public static String getPropertyValue(String filePath, String key) {
 
 		// 引数がnull又は空文字列の場合はnullを返す
-		if (StringUtil.isEmpty(filePath) || StringUtil.isEmpty(key)) {
+		if (StringUtilTest.isEmpty(filePath) || StringUtilTest.isEmpty(key)) {
 			return null;
 		}
 
@@ -591,7 +591,7 @@ public class WebAPIUtil {
 			throws Exception {
 
 		// 引数がnull又は空文字列の場合はnullを返す
-		if (StringUtil.isEmpty(filePath) || StringUtil.isEmpty(key)) {
+		if (StringUtilTest.isEmpty(filePath) || StringUtilTest.isEmpty(key)) {
 			return null;
 		}
 
@@ -629,7 +629,7 @@ public class WebAPIUtil {
 		}
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(eMail)) {
+		if (!StringUtilTest.isEmpty(eMail)) {
 
 			// @の文字が含まれていない場合はエラーとする。
 			if (eMail.indexOf("@") <= 0) {
@@ -768,7 +768,7 @@ public class WebAPIUtil {
 	public static boolean isNumberCheck(String str) {
 
 		// 引数がnull又は空文字列の場合はfalseを返します。
-		if (StringUtil.isEmpty(str)) {
+		if (StringUtilTest.isEmpty(str)) {
 			return false;
 		}
 		return str.matches("[0-9]*");
@@ -834,7 +834,7 @@ public class WebAPIUtil {
 	public static boolean localEmptyChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// @の位置を取得
 			int index = str.indexOf("@");
@@ -843,7 +843,7 @@ public class WebAPIUtil {
 			String eMailMoji1 = str.substring(0, index);
 
 			// ドメイン部(@以降)に何も設定されていない場合はエラーとする。
-			if (StringUtil.isEmpty(eMailMoji1)) {
+			if (StringUtilTest.isEmpty(eMailMoji1)) {
 				System.out.println("☆☆ ローカル部(@以前)に何も設定されていません。");
 				return false;
 			}
@@ -863,7 +863,7 @@ public class WebAPIUtil {
 	public static boolean localTopDotChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// @の位置を取得
 			int index = str.indexOf("@");
@@ -892,7 +892,7 @@ public class WebAPIUtil {
 	public static boolean localLastDotChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// @の位置を取得
 			int index = str.indexOf("@");
@@ -927,7 +927,7 @@ public class WebAPIUtil {
 	public static boolean localTopHyphenChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// @の位置を取得
 			int index = str.indexOf("@");
@@ -956,7 +956,7 @@ public class WebAPIUtil {
 	public static boolean localLeftSquareBracketChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// @の位置を取得
 			int index = str.indexOf("@");
@@ -985,7 +985,7 @@ public class WebAPIUtil {
 	public static boolean localRightSquareBracketChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// @の位置を取得
 			int index = str.indexOf("@");
@@ -1014,7 +1014,7 @@ public class WebAPIUtil {
 	public static boolean domeinEmptyChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// @の位置を取得
 			int index = str.indexOf("@");
@@ -1023,7 +1023,7 @@ public class WebAPIUtil {
 			String eMailMoji2 = str.substring(index + 1, str.length());
 
 			// ドメイン部(@以降)に何も設定されていない場合はエラーとする。
-			if (StringUtil.isEmpty(eMailMoji2)) {
+			if (StringUtilTest.isEmpty(eMailMoji2)) {
 				System.out.println("☆☆ ドメイン部(@以降)に何も設定されていません。");
 				return false;
 			}
@@ -1044,7 +1044,7 @@ public class WebAPIUtil {
 	public static boolean domeinTopDotChk(String eMail) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(eMail)) {
+		if (!StringUtilTest.isEmpty(eMail)) {
 
 			// @の位置を取得
 			int index = eMail.indexOf("@");
@@ -1076,7 +1076,7 @@ public class WebAPIUtil {
 	public static boolean domeinDotChk(String eMail) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(eMail)) {
+		if (!StringUtilTest.isEmpty(eMail)) {
 
 			// @の位置を取得
 			int index = eMail.indexOf("@");
@@ -1108,7 +1108,7 @@ public class WebAPIUtil {
 	public static boolean domeinSquareBracketChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// @の位置を取得
 			int index = str.indexOf("@");
@@ -1142,7 +1142,7 @@ public class WebAPIUtil {
 	public static boolean domeinSquareBracketTLChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// @の位置を取得
 			int index = str.indexOf("@");
@@ -1176,7 +1176,7 @@ public class WebAPIUtil {
 	public static boolean domeinSquareBracketNumberDotChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// @の位置を取得
 			int index = str.indexOf("@");
@@ -1216,7 +1216,7 @@ public class WebAPIUtil {
 	public static boolean commercialChk(String eMail) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(eMail)) {
+		if (!StringUtilTest.isEmpty(eMail)) {
 
 			// @の位置を取得
 			int index = eMail.indexOf("@");
@@ -1251,7 +1251,7 @@ public class WebAPIUtil {
 	public static boolean leftParenthesisChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// 「(」が設定されている場合はエラーとする。
 			if (str.indexOf("(") >= 0) {
@@ -1274,7 +1274,7 @@ public class WebAPIUtil {
 	public static boolean rightParenthesisChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// 「)」が設定されている場合はエラーとする。
 			if (str.indexOf(")") >= 0) {
@@ -1297,7 +1297,7 @@ public class WebAPIUtil {
 	public static boolean lessThanSignChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// 「<」が設定されている場合はエラーとする。
 			if (str.indexOf("<") >= 0) {
@@ -1320,7 +1320,7 @@ public class WebAPIUtil {
 	public static boolean greaterThanSignChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// 「>」が設定されている場合はエラーとする。
 			if (str.indexOf(">") >= 0) {
@@ -1343,7 +1343,7 @@ public class WebAPIUtil {
 	public static boolean commaChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// 「,」が設定されている場合はエラーとする。
 			if (str.indexOf(",") >= 0) {
@@ -1366,7 +1366,7 @@ public class WebAPIUtil {
 	public static boolean semicolonChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// 「;」が設定されている場合はエラーとする。
 			if (str.indexOf(";") >= 0) {
@@ -1389,7 +1389,7 @@ public class WebAPIUtil {
 	public static boolean colonChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// 「:」が設定されている場合はエラーとする。
 			if (str.indexOf(":") >= 0) {
@@ -1412,7 +1412,7 @@ public class WebAPIUtil {
 	public static boolean yenSignChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// 「\」が設定されている場合はエラーとする。
 			if (str.indexOf("\\") >= 0) {
@@ -1436,7 +1436,7 @@ public class WebAPIUtil {
 	public static boolean singleQuoteChk(String eMail) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(eMail)) {
+		if (!StringUtilTest.isEmpty(eMail)) {
 
 			// 'の文字が含まれている場合はエラーとする。
 			if (eMail.indexOf("'") >= 0) {
@@ -1461,7 +1461,7 @@ public class WebAPIUtil {
 	public static boolean doubleQuotationChk(String eMail) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(eMail)) {
+		if (!StringUtilTest.isEmpty(eMail)) {
 
 			// "の文字が含まれている場合はエラーとする。
 			if (eMail.indexOf("\"") >= 0) {
@@ -1486,7 +1486,7 @@ public class WebAPIUtil {
 	public static boolean dotChk(String eMail) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(eMail)) {
+		if (!StringUtilTest.isEmpty(eMail)) {
 
 			// @の位置を取得
 			int index = eMail.indexOf("@");
@@ -1516,7 +1516,7 @@ public class WebAPIUtil {
 	public static boolean continueDotChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// ローカル部(@以前)に「.」が複数連続で設定されている場合はエラーとする。
 			if (str.indexOf("..") >= 0) {
@@ -1539,7 +1539,7 @@ public class WebAPIUtil {
 	public static boolean spaceChk(String str) {
 
 		// Eメールが設定されている場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// スペースが設定されている場合はエラーとする。
 			if (str.indexOf(" ") >= 0) {
@@ -1563,7 +1563,7 @@ public class WebAPIUtil {
 	 */
 	public static boolean isTokushumojiCheck(String str) {
 
-		if (StringUtil.isEmpty(str)) {
+		if (StringUtilTest.isEmpty(str)) {
 
 			return false;
 		}
@@ -1615,7 +1615,7 @@ public class WebAPIUtil {
 	 */
 	public static boolean hasMachineCharacters(String str) {
 
-		if (StringUtil.isEmpty(str)) {
+		if (StringUtilTest.isEmpty(str)) {
 
 			return false;
 		}
@@ -1703,7 +1703,7 @@ public class WebAPIUtil {
 	 * @return outputArray which divided for 10k, eg. "1,2,3"
 	 */
 	public static String updateGraphValue(String inputArray) {
-		if (StringUtil.isEmpty(inputArray)) {
+		if (StringUtilTest.isEmpty(inputArray)) {
 			return inputArray;
 		}
 
@@ -1755,7 +1755,7 @@ public class WebAPIUtil {
 	 * @return outputArray which summarized
 	 */
 	public static BigDecimal sumData(String inputArray) {
-		if (StringUtil.isEmpty(inputArray)) {
+		if (StringUtilTest.isEmpty(inputArray)) {
 			return BigDecimal.ZERO;
 		}
 
@@ -1763,7 +1763,7 @@ public class WebAPIUtil {
 		BigDecimal total = BigDecimal.ZERO;
 		for (String element : stringArr) {
 			total = total
-					.add(StringUtil.toBigDecimal(element, BigDecimal.ZERO));
+					.add(StringUtilTest.toBigDecimal(element, BigDecimal.ZERO));
 		}
 		return total;
 	}
@@ -1777,7 +1777,7 @@ public class WebAPIUtil {
 	 */
 	public static BigDecimal sumData(String inputArray,int startCount, int endCount) {
 		// 要素がない場合
-		if (StringUtil.isEmpty(inputArray)) {
+		if (StringUtilTest.isEmpty(inputArray)) {
 			return BigDecimal.ZERO;
 		}
 
@@ -1794,7 +1794,7 @@ public class WebAPIUtil {
 		for (String element : stringArr) {
 			// 加算判定
 			if( count >= startCount ){
-				total = total.add(StringUtil.toBigDecimal(element, BigDecimal.ZERO));
+				total = total.add(StringUtilTest.toBigDecimal(element, BigDecimal.ZERO));
 			}
 
 			// 終了判定
@@ -1841,7 +1841,7 @@ public class WebAPIUtil {
 	 * @return outputArray which summarized
 	 */
 	public static String reduceString(String inputArray,int maxCount) {
-		if (inputArray == null || StringUtil.isEmpty(inputArray)) {
+		if (inputArray == null || StringUtilTest.isEmpty(inputArray)) {
 			return inputArray;
 		}
 

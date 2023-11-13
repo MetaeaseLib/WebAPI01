@@ -17,7 +17,7 @@
  *
  * @author  Y.Takahashi
  *********************************************************************/
-package main.java.jp.co.metaease.com;
+package jp.co.metaease.com;
 
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;

@@ -1,4 +1,4 @@
-package main.java.jp.co.metaease.web;
+package jp.co.metaease.web;
 
 import java.util.Collections;
 import org.slf4j.Logger;

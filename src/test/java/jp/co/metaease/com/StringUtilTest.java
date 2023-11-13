@@ -1,23 +1,23 @@
 /*********************************************************************
  * 文字列の編集を行います。
  * @@
- * StringUtil.java
+ * StringUtilTestTest.java
  * WebAPI　共通部品
  *
  * クラス一覧
  *     No  クラス名                概要
- *     01  StringUtil　　　　　　　文字列の編集を行います。
+ *     01  StringUtilTestTest　　　　　　　文字列の編集を行います。
  *
  * 履歴
   * 履歴
  *     No       日付        Ver             更新者              内容
- *     00001    2023/11/09　V0001L00001     Yuki Takahashi     Initial
+ *     00001    2023/11/13　V0001L00001     Yuki Takahashi     Initial
  *
  * Copyright(C) Metaease 2023
  *
  * @author  Y.Takahashi
  *********************************************************************/
-package main.java.jp.co.metaease.com;
+package jp.co.metaease.com;
 
 import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
@@ -25,7 +25,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 //import java.util.HashMap;
 
-public class StringUtil {
+public class StringUtilTestTest {
 
 	/**
 	 * 半角カタカナ文字データテーブルです。
@@ -56,11 +56,11 @@ public class StringUtil {
 	/**
 	 * コンストラクターです。
 	 * @@
-	 * StringUtil
+	 * StringUtilTestTest
 	 * @note
 	 * @@
 	 */
-	private StringUtil() {
+	private StringUtilTestTest() {
 	}
 
 	/**
@@ -898,7 +898,7 @@ public class StringUtil {
 	 */
 	public static String changeToHyphen(String str) {
 		// 引数strがNullでない場合
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 
 			// 半角スペース場合、全角ハイフンを返却
 			if (str.equals(" ")) {
@@ -971,7 +971,7 @@ public class StringUtil {
 	 * @return
 	 */
 	public static BigDecimal toBigDecimal(String obj, BigDecimal defaultValue) {
-		if (StringUtil.isEmpty(obj)) {
+		if (StringUtilTest.isEmpty(obj)) {
 			return defaultValue;
 		}
 		return new BigDecimal(obj);
@@ -990,7 +990,7 @@ public class StringUtil {
 	public static String sanitizeLineBreak(String str) {
 		// 引数strがNullでない場合
 		String outValue = null;
-		if (!StringUtil.isEmpty(str)) {
+		if (!StringUtilTest.isEmpty(str)) {
 			
 			outValue = str;
 			

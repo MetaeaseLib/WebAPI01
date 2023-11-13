@@ -1,4 +1,4 @@
-package main.java.jp.co.metaease.web.ctrl;
+package jp.co.metaease.web.ctrl;
 
 import java.util.Iterator;
 import java.util.Map;

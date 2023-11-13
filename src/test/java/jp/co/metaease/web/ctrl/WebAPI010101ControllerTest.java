@@ -1,4 +1,4 @@
-package main.java.jp.co.metaease.web.ctrl;
+package jp.co.metaease.web.ctrl;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -15,10 +15,10 @@ import main.java.jp.co.metaease.com.WebAPIUtil;
 
 /** Defines a controller to handle HTTP requests */
 @Controller
-public final class WebAPI010101Controller {
+public final class WebAPI010101ControllerTest {
 
   private static String project;
-  private static final Logger logger = LoggerFactory.getLogger(WebAPI010101Controller.class);
+  private static final Logger logger = LoggerFactory.getLogger(WebAPI010101ControllerTest.class);
 
   /**
    * Create an endpoint for the landing page

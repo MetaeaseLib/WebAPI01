@@ -22,13 +22,13 @@
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Collection;
-import java.util.Date;
+//import java.util.Collection;
+//import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.MissingResourceException;
-import java.util.Random;
+//import java.util.Random;
 import java.util.ResourceBundle;
 
 public class WebAPIUtil {
@@ -349,7 +349,7 @@ public class WebAPIUtil {
 			}
 
 			// 求めた年齢を返却します。
-			return new Integer.valueOf(ret);
+			return (Integer)Integer.valueOf(ret);
 
 		} catch (Exception e) {
 			return null;
@@ -584,7 +584,7 @@ public class WebAPIUtil {
 	 * @param key 取得したい項目のキー
 	 * @param messageId エラーメッセージID
 	 * @return プロパティファイルより取得した値
-	 * @throws DCPSException 
+	 * @throws Exception 
 	 * @@
 	 */
 	public static String getPropertyValue(String filePath, String key, String messageId)

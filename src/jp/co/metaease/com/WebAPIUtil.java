@@ -588,7 +588,7 @@ public class WebAPIUtil {
 	 * @@
 	 */
 	public static String getPropertyValue(String filePath, String key, String messageId)
-			throws DCPSException {
+			throws Exception {
 
 		// 引数がnull又は空文字列の場合はnullを返す
 		if (StringUtil.isEmpty(filePath) || StringUtil.isEmpty(key)) {
@@ -603,7 +603,7 @@ public class WebAPIUtil {
 			// プロパティリソースバンドルよりキーで値を取得し返却します。
 			return bundle.getString(key);
 		} catch (MissingResourceException ex) {
-			throw new DCPSException(messageId, ex);
+			throw new Exception(messageId, ex);
 		}
 	}
 
